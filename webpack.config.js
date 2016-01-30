@@ -2,14 +2,11 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    index: './index.tsx',
+    index: './src/index.tsx',
   },
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js'
-  },
-  resolve: {
-    extensions: ['', '.js', '.coffee']
   },
   module: {
     loaders: [{
