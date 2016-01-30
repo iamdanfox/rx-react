@@ -18,6 +18,5 @@ module.exports = {
       exclude: /node_modules/,
       include: __dirname
     }]
-  },
-  devtool: 'cheap-eval-sourcemap'
+  }
 };
