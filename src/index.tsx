@@ -1,24 +1,36 @@
+"use strict";
 /// <reference path="../typings/tsd.d.ts" />
 
-import x from './something.tsx';
+import { model, IModel, IModelState } from './something.tsx';
 import * as React from 'react';
 import { render } from 'react-dom';
+import { Subscription } from "rxjs";
 
-console.log(x);
+class App extends React.Component<{}, IModelState> {
 
-interface IAppProps {
-  message: string;
-}
-
-class App extends React.Component<IAppProps, {}> {
-
-  public constructor(props: IAppProps) {
-    super(props);
+  public constructor() {
+    super();
+    this.model = model();
+    this.state = {} as IModelState;
   }
+
+  public componentDidMount() {
+    this.subscription = this.model.state$
+      // .do((a) => console.log("a", a))
+      .subscribe((state) => this.setState(state));
+  }
+
+  public componentWillUnmount() {
+    this.subscription.unsubscribe();
+  }
+
+  private subscription: Subscription;
+
+  private model: IModel;
 
   public render() {
-    return <div>{this.props.message}</div>;
+    return <div>Hello! {this.state.count}</div>;
   }
 }
 
-render(<App message="This is a prop" />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
