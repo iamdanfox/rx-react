@@ -11,59 +11,14 @@
     "react/react-dom.d.ts": {
       "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
     },
-    "rx/rx.all.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
+    "mocha/mocha.d.ts": {
+      "commit": "3030a4be536b6530c06b80081f1333dc0de4d703"
     },
-    "rx/rx.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
+    "chai/chai.d.ts": {
+      "commit": "3030a4be536b6530c06b80081f1333dc0de4d703"
     },
-    "rx/rx-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.aggregates.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.time.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.time-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.async.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.async-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.binding.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.binding-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.coincidence.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.coincidence-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.experimental.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.joinpatterns.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.virtualtime.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.testing.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.backpressure.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
-    "rx/rx.backpressure-lite.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "3030a4be536b6530c06b80081f1333dc0de4d703"
     }
   }
 }

@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
-    "noEmit": true
+    "target": "es5",
+    "jsx": "react"
   },
   "files": [
-      "src/something.tsx",
-      "src/index.tsx",
-      "typings/tsd.d.ts"
+    "src/index.tsx",
+    "src/something.tsx",
+    "src/test.tsx",
+    "typings/tsd.d.ts",
+    "node_modules/typescript/lib/lib.es6.d.ts"
   ]
 }
