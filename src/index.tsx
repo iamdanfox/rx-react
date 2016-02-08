@@ -8,20 +8,17 @@ import { Subscription, Subject } from "rxjs";
 
 class RxApp extends React.Component<{}, IModelState> {
 
+  private increment$ = new Subject();
+
+  private decrement$ = new Subject();
+
   public constructor() {
     super();
-    this.increment$ = new Subject();
-    this.model = new SomethingModel(this.increment$);
+    this.model = new SomethingModel(this.increment$, this.decrement$);
     this.state = {} as IModelState;
   }
 
-  private increment$: Subject<{}>;
-
-  private increment() {
-    this.increment$.next({});
-  }
-
-  public componentDidMount() {
+  public componentWillMount() {
     this.subscription = this.model.state$
       .subscribe((state) => this.setState(state));
   }
@@ -36,8 +33,10 @@ class RxApp extends React.Component<{}, IModelState> {
 
   public render() {
     return (
-      <div onClick={() => this.increment()}>
+      <div>
         Click me! {this.state.count}
+        <button onClick={this.increment$.next.bind(this.increment$)}>Up</button>
+        <button onClick={this.decrement$.next.bind(this.decrement$)}>Down</button>
       </div>
     );
   }
