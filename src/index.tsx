@@ -4,14 +4,21 @@
 import { SomethingModel, IModelState } from './something.tsx';
 import * as React from 'react';
 import { render } from 'react-dom';
-import { Subscription } from "rxjs";
+import { Subscription, Subject } from "rxjs";
 
 class RxApp extends React.Component<{}, IModelState> {
 
   public constructor() {
     super();
-    this.model = SomethingModel.create();
+    this.increment$ = new Subject();
+    this.model = new SomethingModel(this.increment$);
     this.state = {} as IModelState;
+  }
+
+  private increment$: Subject<{}>;
+
+  private increment() {
+    this.increment$.next({});
   }
 
   public componentDidMount() {
@@ -28,7 +35,11 @@ class RxApp extends React.Component<{}, IModelState> {
   private model: SomethingModel;
 
   public render() {
-    return <div>Hello! {this.state.count}</div>;
+    return (
+      <div onClick={() => this.increment()}>
+        Click me! {this.state.count}
+      </div>
+    );
   }
 }
 
