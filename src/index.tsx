@@ -1,22 +1,21 @@
 "use strict";
 /// <reference path="../typings/tsd.d.ts" />
 
-import { model, IModel, IModelState } from './something.tsx';
+import { SomethingModel, IModelState } from './something.tsx';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { Subscription } from "rxjs";
 
-class App extends React.Component<{}, IModelState> {
+class RxApp extends React.Component<{}, IModelState> {
 
   public constructor() {
     super();
-    this.model = model();
+    this.model = SomethingModel.create();
     this.state = {} as IModelState;
   }
 
   public componentDidMount() {
     this.subscription = this.model.state$
-      // .do((a) => console.log("a", a))
       .subscribe((state) => this.setState(state));
   }
 
@@ -26,11 +25,11 @@ class App extends React.Component<{}, IModelState> {
 
   private subscription: Subscription;
 
-  private model: IModel;
+  private model: SomethingModel;
 
   public render() {
     return <div>Hello! {this.state.count}</div>;
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(<RxApp />, document.getElementById("root"));

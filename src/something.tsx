@@ -3,23 +3,25 @@
 
 import {Observable, BehaviorSubject} from "rxjs";
 
-export function model() {
+export class SomethingModel {
+  public state$: Observable<IModelState>;
 
-  const initial$ = Observable.of({count: 777});
-  const interval$ = Observable.interval(200)
-  .map((count) => {
-    return {count}
-  });
+  public constructor() {
+    const initial$ = Observable.of({count: 777});
+    const interval$ = Observable.interval(200)
+      .map((count) => {
+        return {count}
+      });
 
-  const state$ = initial$.merge(interval$);
+    this.state$ = initial$.merge(interval$)
+      .do((a) => console.log("a", a));
+  }
 
-  return { state$ };
+  public static create(): SomethingModel {
+    return new this();
+  }
 }
 
 export interface IModelState {
   count: number;
-}
-
-export interface IModel {
-  state$: Observable<IModelState>
 }
